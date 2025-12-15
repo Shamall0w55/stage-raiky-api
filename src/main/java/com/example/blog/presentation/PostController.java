@@ -38,14 +38,14 @@ public class PostController {
     }
 
     //update
-    @PutMapping
+    @PutMapping("{id}")
     public ResponseEntity<Post> updatePost(@PathVariable UUID id, @RequestBody PostDTO postDto) {
         Post updatedPost = postUseCase.updatePost(id, postDto.getPostTitle(), postDto.getPostContent());
         return ResponseEntity.ok(updatedPost);
     }
 
     //delete
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public ResponseEntity<Void> deletePost(@PathVariable UUID id) {
         postUseCase.deletePost(id);
         return ResponseEntity.noContent().build();

@@ -4,11 +4,13 @@ import com.example.blog.domain.entity.Post;
 import com.example.blog.domain.repository.PostRepository;
 import com.example.blog.domain.value_object.PostContent;
 import com.example.blog.domain.value_object.PostTitle;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class PostUseCase {
     private final PostRepository postRepository;
 
