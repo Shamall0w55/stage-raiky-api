@@ -21,6 +21,12 @@ public class Post {
         this.content = content;
     }
 
+    public Post(UUID postID, PostTitle title, PostContent content) {
+        this.postID = postID;
+        this.title = title;
+        this.content = content;
+    }
+
     public void updateTitle(PostTitle newTitle){
         this.title = newTitle;
     }
