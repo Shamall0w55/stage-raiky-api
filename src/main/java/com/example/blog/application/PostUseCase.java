@@ -4,6 +4,7 @@ import com.example.blog.domain.entity.Post;
 import com.example.blog.domain.repository.PostRepository;
 import com.example.blog.domain.value_object.PostContent;
 import com.example.blog.domain.value_object.PostTitle;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class PostUseCase {
         this.postRepository = postRepository;
     }
 
+    @Transactional
     public  Post createPost(String titleStr, String contentStr){
         PostTitle title = new PostTitle(titleStr);
         PostContent content = new PostContent(contentStr);
@@ -33,6 +35,7 @@ public class PostUseCase {
         return postRepository.findAll();
     }
 
+    @Transactional
     public Post updatePost(UUID postId, String titleStr, String contentStr){
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new IllegalArgumentException("Post Not Found"));
@@ -43,6 +46,7 @@ public class PostUseCase {
         return postRepository.save(post);
     }
 
+    @Transactional
     public void deletePost(UUID postId){
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new IllegalArgumentException("Post Not Found"));
