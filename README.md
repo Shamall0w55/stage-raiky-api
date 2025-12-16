@@ -36,9 +36,11 @@ blog/
 ├── application
 │   └── usecases
 │
-└── infrastructure
+└── presentation
+│
+└──  infrastructure
     ├── persistence (JPA)
-    └── controllers (REST)
+    └── controllers (REST)  
 ```
 
 * **Domain**: Contains business logic and rules
