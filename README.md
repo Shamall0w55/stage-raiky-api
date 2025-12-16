@@ -45,6 +45,7 @@ blog/
 
 * **Domain**: Contains business logic and rules
 * **Application**: Manages use cases and orchestrates domain operations
+* **Presentation**: Contains Controllers and DTOs
 * **Infrastructure**: Handles database access and REST API exposure
 
 ---
